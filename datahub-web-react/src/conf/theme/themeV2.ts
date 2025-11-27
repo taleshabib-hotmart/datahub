@@ -25,17 +25,17 @@ const themeV2: Theme = {
         logoUrl: 'assets/logo.png',
     },
     content: {
-        title: 'DataHub',
+        title: 'Astrolens',
         search: {
             searchbarMessage: 'Find tables, dashboards, people, and more',
         },
         menu: {
             items: [
                 {
-                    label: 'DataHub Project',
+                    label: 'Astrolens Project',
                     path: 'https://docs.datahub.com',
                     shouldOpenInNewTab: true,
-                    description: 'Explore DataHub Project website',
+                    description: 'Explore Astrolens Project website',
                 },
                 {
                     label: 'DataHub GitHub',

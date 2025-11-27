@@ -4,8 +4,8 @@
   changeType: UPSERT
   aspect:
     active: true
-    displayName: DataHub
-    title: DataHub
+    displayName: Astrolens
+    title: Astrolens
     system: true
 - entityUrn: urn:li:corpuser:datahub
   entityType: corpuser

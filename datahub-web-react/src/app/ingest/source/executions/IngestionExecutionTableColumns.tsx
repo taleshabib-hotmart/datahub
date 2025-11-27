@@ -76,7 +76,7 @@ const UserPill = ({ actor }: { actor: Actor }) => (
         <CreatedByContainer>
             <CustomAvatar size={16} name={actor?.displayName} hideTooltip />
             <Text type="div" color="gray" size="sm" weight="semiBold">
-                {actor?.displayName}
+                Astrolens
             </Text>
         </CreatedByContainer>
     </Link>
