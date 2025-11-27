@@ -30,24 +30,23 @@ export function useSetAppTheme() {
 
     useEffect(() => {
         if (customThemeId && customThemeId.endsWith('.json')) {
-            if (import.meta.env.DEV) {
-                import(/* @vite-ignore */ `./conf/theme/${customThemeId}`)
-                    .then((theme) => {
-                        updateTheme(theme);
-                    })
-                    .catch((error) => {
-                        console.error(`Failed to load theme from './conf/theme/${customThemeId}':`, error);
-                    });
-            } else {
-                fetch(`assets/conf/theme/${customThemeId}`)
-                    .then((response) => response.json())
-                    .then((theme) => {
-                        updateTheme(theme);
-                    })
-                    .catch((error) => {
-                        console.error(`Failed to load theme from 'assets/conf/theme/${customThemeId}':`, error);
-                    });
-            }
+            // Use fetch for both dev and prod to avoid Vite dependency scanning issues with dynamic imports
+            // Files are available at assets/conf/theme in both dev (via viteStaticCopy watch) and prod
+            const themePath = `assets/conf/theme/${customThemeId}`;
+
+            fetch(themePath)
+                .then((response) => {
+                    if (!response.ok) {
+                        throw new Error(`Failed to fetch theme: ${response.statusText}`);
+                    }
+                    return response.json();
+                })
+                .then((theme) => {
+                    updateTheme(theme);
+                })
+                .catch((error) => {
+                    console.error(`Failed to load theme from '${themePath}':`, error);
+                });
         } else if (customThemeId && themes[customThemeId]) {
             updateTheme(themes[customThemeId]);
         } else {

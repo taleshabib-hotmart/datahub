@@ -99,7 +99,7 @@ export default function EmbeddedHeader() {
                         rel="noreferrer noopener"
                         onClick={trackClickViewInDataHub}
                     >
-                        view in DataHub <ArrowRightOutlined />
+                        view in Astrolens <ArrowRightOutlined />
                     </StyledLink>
                 </EntityNameWrapper>
             </EntityContent>

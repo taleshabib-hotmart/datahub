@@ -11,14 +11,14 @@ export default function DeprecationBanner() {
 
     const linkContent = (
         <span>
-            {String.fromCodePoint(128064)}&nbsp; DataHub has a new look! Preview it now under{' '}
+            {String.fromCodePoint(128064)}&nbsp; Astrolens has a new look! Preview it now under{' '}
             <Link to={`${PageRoutes.SETTINGS}/preferences`}>Appearance &gt; Try New User Experience</Link> before the
             current UI goes away with v1.3.0.
         </span>
     );
     const staticContent = (
         <>
-            {String.fromCodePoint(128064)}&nbsp; DataHub has a new look! Contact your Admin to unlock the new interface
+            {String.fromCodePoint(128064)}&nbsp; Astrolens has a new look! Contact your Admin to unlock the new interface
             before the current UI goes away with v1.3.0.
         </>
     );

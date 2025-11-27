@@ -45,14 +45,7 @@ export const GreetingText = ({ role }: { role?: string | null }) => {
 
     if (showNavBarRedesign) {
         return (
-            <TitleWrapper>
-                {!!user && (
-                    <PageTitle
-                        title={`${greetingText}, ${entityRegistry.getDisplayName(EntityType.CorpUser, user)}`}
-                        subTitle={role}
-                    />
-                )}
-            </TitleWrapper>
+            <TitleWrapper>{!!user && <PageTitle title={`${greetingText}, Astrolens`} subTitle={role} />}</TitleWrapper>
         );
     }
 

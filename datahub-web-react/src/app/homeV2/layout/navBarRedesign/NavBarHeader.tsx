@@ -8,8 +8,6 @@ import { useShowHomePageRedesign } from '@app/homeV3/context/hooks/useShowHomePa
 import { useIsHomePage } from '@app/shared/useIsHomePage';
 import analytics, { EventType } from '@src/app/analytics';
 
-import DatahubCoreLogo from '@images/datahub_core.svg?react';
-
 const Container = styled.div`
     display: flex;
     width: 100%;
@@ -41,6 +39,13 @@ const Logotype = styled.div`
     }
 `;
 
+const Title = styled.h1`
+    font-size: 20px;
+    font-weight: 900;
+    color: #000;
+    margin: 0;
+`;
+
 const StyledLink = styled(Link)`
     display: flex;
     height: 40px;
@@ -70,7 +75,7 @@ export default function NavBarHeader({ logotype }: Props) {
         <Container>
             <StyledLink to="/" onClick={handleLogoClick}>
                 <Logotype>{logotype}</Logotype>
-                {!isCollapsed && <DatahubCoreLogo />}
+                <Title>Astrolens</Title>
             </StyledLink>
             {!isCollapsed && <NavBarToggler />}
         </Container>

@@ -42,7 +42,7 @@ export const OnboardingCards = () => {
                 <Card
                     icon={<UserPlus color={colors.gray[1800]} size={32} />}
                     title="Invite Users"
-                    subTitle="Invite users to DataHub"
+                    subTitle="Invite users to Astrolens"
                     onClick={openInviteUsers}
                     button={<Button variant="text">Invite</Button>}
                 />
